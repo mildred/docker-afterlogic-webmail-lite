@@ -10,6 +10,14 @@ if [[ -n "$MYSQL_USER" ]]; then
     sedargs+=(-e "s|<DBLogin.*>|<DBLogin>$MYSQL_USER</DBLogin>|")
 fi
 
+if [[ -n "$ADMIN_LOGIN" ]]; then
+    sedargs+=(-e "s|<AdminLogin.*>|<AdminLogin>$MYSQL_PASSWORD</AdminLogin>|")
+fi
+
+if [[ -n "$ADMIN_PASSWORD" ]]; then
+    sedargs+=(-e "s|<AdminPassword.*>|<AdminPassword>$MYSQL_USER</AdminPassword>|")
+fi
+
 if [[ -n "$IMAP_PORT" ]]; then
     sedargs+=(-e "s|<IncomingMailPort.*>|<IncomingMailPort>$IMAP_PORT</IncomingMailPort>|")
 fi

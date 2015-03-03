@@ -19,7 +19,11 @@ RUN sed -i \
     -e 's|<DBLogin.*>|<DBLogin>webmail</DBLogin>|' \
     -e 's|<DBPassword.*>|<DBPassword></DBPassword>|' \
     -e 's|<IncomingMailServer.*>|<IncomingMailServer>imap</IncomingMailServer>|' \
+    -e 's|<IncomingMailPort.*>|<IncomingMailPort>993</IncomingMailPort>|' \
+    -e 's|<IncomingMailUseSSL.*>|<IncomingMailUseSSL>On</IncomingMailUseSSL>|' \
     -e 's|<OutgoingMailServer.*>|<OutgoingMailServer>smtp</OutgoingMailServer>|' \
+    -e 's|<OutgoingMailPort.*>|<OutgoingMailPort>465</OutgoingMailPort>|' \
+    -e 's|<OutgoingMailUseSSL.*>|<OutgoingMailUseSSL>On</OutgoingMailUseSSL>|' \
     /usr/share/afterlogic/data/settings/settings.xml
 
 # <DBHost>mysql
